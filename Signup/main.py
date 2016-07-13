@@ -7,9 +7,9 @@ form = """
 <form method="post">
     Username <input type="text" name="username" value="{username}"> 
         <div style="color: red; display: inline-block;"> {username_error} </div> <br>
-    Password <input type="text" name="password" value="{password}">
+    Password <input type="password" name="password" value="{password}">
         <div style="color: red; display: inline-block;"> {password_error} </div> <br>
-    Verify Password <input type="text" name="verify" value="{verify}">
+    Verify Password <input type="password" name="verify" value="{verify}">
         <div style="color: red; display: inline-block;"> {verify_error} </div> <br>
     Email <input type="text" name="email" value="{email}">
         <div style="color: red; display: inline-block;"> {email_error} </div><br>
@@ -59,7 +59,7 @@ class MainPage(webapp2.RequestHandler):
                             email_error=email_error,
                             password_error=password_error,
                             verify_error=verify_error,
-                            username=username_error,
+                            username=username,
                             email=email)
         else:
             return self.redirect("/welcome")
